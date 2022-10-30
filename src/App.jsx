@@ -15,23 +15,27 @@ function App() {
 
   useEffect (() => {
     
+
     const options = {
       enableHighAccuracy: true,
-      maximumAge: 30000,
-      timeout: 27000
+      timeout: 5000,
+      maximumAge: 0
     };
+   
     const success = pos => {
      
       const lat = pos.coords.latitude
       const lon = pos.coords.longitude
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b6d6d898b8a845fe7ded56300bfe5802`)
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b6d6d898b8a845fe7ded56300bfe5802
+      `)
         .then(res => setWeather(res.data)); 
       
     }
-    function error() {
-      alert('No hay posición disponible.');
-    }
-    navigator.geolocation.getCurrentPosition(success,error, options); 
+   
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    } 
+    navigator.geolocation.getCurrentPosition(success,error,options); 
   }, [])
 
 
@@ -50,12 +54,12 @@ console.log(weather)
         <div className='temp-info'>
           <img src= {`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" className='icon' />
           <div> 
-            <h2>{weather.weather?.[0].description} </h2>
+            <h3>{weather.weather?.[0].description} </h3>
         
-            <h2>
+            <h3>
                {isCelsius ? (weather.main?.temp - 273.15).toFixed(2) : ((1.8 * (weather.main?.temp - 273.15)) + 32).toFixed(2) }
                 {" "} {isCelsius ? "ºC" : "ºF" }
-            </h2>
+            </h3>
           </div>
         </div>
 

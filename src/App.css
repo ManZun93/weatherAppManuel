@@ -18,7 +18,7 @@ body{
 }
 
 .weather-container{
-  width: 17%;
+  width: 40vh;
   text-align: center;
   padding: 2%;
   border: solid black 1px;
@@ -28,7 +28,7 @@ body{
 
 .temp-info{
   padding-bottom: 5%;
-  height: 75%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +41,7 @@ body{
 
 .icon {
   width: 50%;
+ 
 }
 
 button {
