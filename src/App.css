@@ -18,9 +18,9 @@ body{
 }
 
 .weather-container{
-  width: 40vh;
+  width: 33vh;
   text-align: center;
-  padding: 2%;
+  padding: 3%;
   border: solid black 1px;
   border-radius: 10px;
   background-image: linear-gradient(to right top, #6bd1d1, #5ecbda, #5ac5e2, #5fbde8, #6db5ea, #6cb8ef, #6bbcf3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
@@ -48,7 +48,7 @@ button {
   min-width: 130px;
   height: 40px;
   color: #fff;
-  padding: 8px 10px;
+  padding: 10px 10px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -69,4 +69,9 @@ button:hover {
 button:hover {
   box-shadow: 0 0 #2c0b8e;
   top: 5px;
+}
+
+h1 {
+  border: 0;
+  margin: 0;
 }
