@@ -15,7 +15,11 @@ function App() {
 
   useEffect (() => {
     
-  
+    const options = {
+      enableHighAccuracy: true,
+      maximumAge: 30000,
+      timeout: 27000
+    };
     const success = pos => {
      
       const lat = pos.coords.latitude
@@ -24,8 +28,10 @@ function App() {
         .then(res => setWeather(res.data)); 
       
     }
-
-    navigator.geolocation.getCurrentPosition(success); 
+    function error() {
+      alert('No hay posición disponible.');
+    }
+    navigator.geolocation.getCurrentPosition(success,error, options); 
   }, [])
 
 
