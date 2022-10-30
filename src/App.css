@@ -18,8 +18,9 @@ body{
 }
 
 .weather-container{
+  width: 17%;
   text-align: center;
-  padding: 4%;
+  padding: 2%;
   border: solid black 1px;
   border-radius: 10px;
   background-image: linear-gradient(to right top, #6bd1d1, #5ecbda, #5ac5e2, #5fbde8, #6db5ea, #6cb8ef, #6bbcf3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
@@ -39,7 +40,7 @@ body{
 
 
 .icon {
-  width: 60%;
+  width: 50%;
 }
 
 button {

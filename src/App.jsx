@@ -50,12 +50,12 @@ console.log(weather)
         <div className='temp-info'>
           <img src= {`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" className='icon' />
           <div> 
-            <p>{weather.weather?.[0].description} </p>
+            <h2>{weather.weather?.[0].description} </h2>
         
-            <p>
+            <h2>
                {isCelsius ? (weather.main?.temp - 273.15).toFixed(2) : ((1.8 * (weather.main?.temp - 273.15)) + 32).toFixed(2) }
                 {" "} {isCelsius ? "ºC" : "ºF" }
-            </p>
+            </h2>
           </div>
         </div>
 
